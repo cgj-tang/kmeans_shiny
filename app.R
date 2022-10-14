@@ -89,8 +89,13 @@ server <- function(input, output, session) {
                                 ggplot(aes(x = col1, 
                                            y = col2, 
                                            color = Species)) +
-                                geom_point(size = 3, 
-                                           position = position_jitter(seed = 1)) +
+                                {if (input$jitter) {
+                                        geom_point(size = 3,
+                                                   position = position_jitter(seed = 1))}
+                                        else {
+                                                geom_point(size = 3)
+                                        }
+                                } +
                                 xlab(input$var1) +
                                 ylab(input$var2) +
                                 theme_bw()
@@ -213,8 +218,6 @@ server <- function(input, output, session) {
                                                 geom_point(size = 3)
                                         }
                                 } +
-                                #geom_point(size = 3,
-                                #           position = position_jitter(seed = 1)) +
                                 {if (input$ellipse) {stat_ellipse()}} +
                                 geom_point(data = k_frame,
                                            size = 5,
