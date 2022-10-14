@@ -50,7 +50,7 @@ ui <- fluidPage(
                 
                 # Main panel for displaying outputted graph
                 mainPanel(p(strong('K-means clustering'), 
-                            'is one of the most popular and intuitive machine learning technique out there. The general aim is to group ',
+                            'is one of the most popular and intuitive machine learning techniques out there. The general aim is to group ',
                             em('n'), 
                             ' observations into', 
                             em('k'), 
